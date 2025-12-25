@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SecureAuth</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>SecureAuth</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h3 id="userName">Loading...</h3>
+                <p id="userEmail">Loading...</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="#">
+                    <i class="fas fa-user"></i> Profil
+                </a>
+                <a href="#">
+                    <i class="fab fa-telegram"></i> Notifikasi
+                </a>
+                <a href="#">
+                    <i class="fas fa-history"></i> Aktivitas
+                </a>
+                <a href="#">
+                    <i class="fas fa-cog"></i> Pengaturan
+                </a>
+                <a href="index.html">
+                    <i class="fas fa-home"></i> Beranda
+                </a>
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+
+            <div class="telegram-info-sidebar">
+                <h4><i class="fab fa-telegram"></i> Telegram Bot</h4>
+                <p>Notifikasi dikirim ke ID: <strong>7878198899</strong></p>
+                <p>Token: <code>8089493197:AAG2QN...</code></p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="topbar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cari...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="btn-notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="btn-telegram" id="testTelegramBtn">
+                        <i class="fab fa-telegram"></i> Test Notifikasi
+                    </button>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="welcome-banner">
+                    <h1>Selamat Datang di Dashboard</h1>
+                    <p>Sistem dengan notifikasi Telegram real-time</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #4CAF50;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalUsers">0</h3>
+                            <p>Total Pengguna</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #2196F3;">
+                            <i class="fas fa-sign-in-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalLogins">0</h3>
+                            <p>Total Login</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #9C27B0;">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalRegisters">0</h3>
+                            <p>Total Registrasi</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #FF9800;">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalNotifications">0</h3>
+                            <p>Notifikasi Terkirim</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-sections">
+                    <div class="section">
+                        <h2><i class="fas fa-history"></i> Aktivitas Terbaru</h2>
+                        <div class="activity-list" id="activityList">
+                            <!-- Aktivitas akan dimuat di sini -->
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p><strong>Registrasi baru</strong> dari user@example.com</p>
+                                    <span class="activity-time">2 menit yang lalu</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p><strong>Login berhasil</strong> oleh admin@system.com</p>
+                                    <span class="activity-time">15 menit yang lalu</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2><i class="fab fa-telegram"></i> Notifikasi Telegram</h2>
+                        <div class="telegram-card">
+                            <div class="telegram-header">
+                                <i class="fab fa-telegram fa-2x"></i>
+                                <h3>Bot Status: <span class="status-active">Aktif</span></h3>
+                            </div>
+                            <div class="telegram-details">
+                                <p><strong>Bot Token:</strong> 8089493197:AAG2QNzfIB7Cc8l6fiFmokUV9N5df-oJabg</p>
+                                <p><strong>Telegram ID:</strong> 7878198899</p>
+                                <p><strong>Contact:</strong> <a href="https://t.me/AanzCuyxzzz" target="_blank">@AanzCuyxzzz</a></p>
+                            </div>
+                            <div class="telegram-test">
+                                <p>Kirim pesan test ke Telegram:</p>
+                                <div class="test-form">
+                                    <input type="text" id="testMessage" placeholder="Pesan test...">
+                                    <button class="btn-telegram-small" id="sendTestBtn">
+                                        <i class="fab fa-telegram"></i> Kirim
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2><i class="fas fa-bolt"></i> Aksi Cepat</h2>
+                    <div class="actions-grid">
+                        <a href="register.html" class="action-card">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Tambah Pengguna</span>
+                        </a>
+                        <a href="#" class="action-card" id="viewUsersBtn">
+                            <i class="fas fa-users"></i>
+                            <span>Lihat Semua Pengguna</span>
+                        </a>
+                        <a href="#" class="action-card" id="viewLogsBtn">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Log Aktivitas</span>
+                        </a>
+                        <a href="index.html" class="action-card">
+                            <i class="fas fa-home"></i>
+                            <span>Kembali ke Beranda</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="dashboard-footer">
+                <p>&copy; 2023 SecureAuth Dashboard. Token Bot: 8089493197:AAG2QNzfIB7Cc8l6fiFmokUV9N5df-oJabg | ID Telegram: 7878198899</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modal untuk daftar pengguna -->
+    <div id="usersModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-users"></i> Daftar Pengguna</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="users-list" id="usersListContainer">
+                    <!-- Daftar pengguna akan dimuat di sini -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
